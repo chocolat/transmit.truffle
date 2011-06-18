@@ -1,0 +1,15 @@
+(trigger
+    (key [[ctrl][shift]F]))
+
+(name [Send Document (DockSend)])
+
+(input nothing)
+
+(output tooltip)
+
+(save file)
+
+(script [#!/bin/sh
+osascript "${TM_BUNDLE_SUPPORT}/bin/send_to_transmit.applescript" "$TM_FILEPATH" &>/dev/console &
+echo "Sent ‘${TM_FILENAME}’ to Transmit"
+])
